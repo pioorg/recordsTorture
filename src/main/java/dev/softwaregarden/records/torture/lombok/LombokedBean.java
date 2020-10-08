@@ -20,6 +20,7 @@ package dev.softwaregarden.records.torture.lombok;
 import lombok.*;
 
 @Value
+@With
 public class LombokedBean {
 	int f1;
 	String f2;

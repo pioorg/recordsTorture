@@ -17,18 +17,15 @@
 
 package dev.softwaregarden.records.torture.lombok;
 
-public class LombokAndRecordsCheck {
 
-	public static void main(String[] args) {
-		System.out.println(new PlainRecord(1, "2"));
-		System.out.println(new RecordWithGetters(1, "2"));
-		System.out.println(new RecordWithAllArgsConstructor(1, "2"));
-		System.out.println(new RecordWithValue(1, "2"));
+import lombok.*;
 
-		var lb1 = new LombokedBean(1, "one");
-		var rww1 = new RecordWithWith("1", "a", "Z");
-		var rrw2= rww1.withDos("A").withTres("z");
-		System.out.println(rrw2);
+@With
+public record RecordWithWith(String uno, String dos, String tres) {
+	public RecordWithWith(String uno, String dos, String tres) {
+		this.uno = uno;
+		this.dos = dos;
+		this.tres = tres;
+		System.out.printf("Called constructor with [%s], [%s], [%s]%n", uno, dos, tres);
 	}
-
 }
